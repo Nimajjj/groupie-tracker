@@ -9,5 +9,17 @@
   <body>
     <h1>Groupie-Tracker</h1>
     <h2>Kheir-Eddine MEDERREG - Benjamin BORELLO</h2>
+
+    <ul>
+      {{range .Characters}}
+        <li>
+          <h3>Name: {{.Name}}</h3>
+          <h3>Full Name: {{.Fullname}}</h3>
+          <h3>Gender: {{.Gender}}</h3>
+          <br>
+        </li>
+      {{end}}
+    </ul>
+
   </body>
 </html>
