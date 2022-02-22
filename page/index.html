@@ -13,13 +13,22 @@
     <ul>
       {{range .Result}}
         <li>
-          <h3>Name: {{.Nom}}</h3>
+          <h3>Nom: {{.Nom}}</h3>
           <h3>Prenom: {{.Prenom}}</h3>
           <h3>Email: {{.Email}}</h3>
+          {{if ne .Github ""}}
+            <a href="{{.Github}}"> <h3>Github</h3> </a>
+          {{end}}
+          {{if ne .Linkedin ""}}
+            <a href="{{.Linkedin}}"> <h3>Linkedin</h3> </a>
+          {{end}}
+          <img src="{{.Photo}}" alt="" style="height=33; max-width=33;">
           <br>
         </li>
       {{end}}
     </ul>
+
+
 
   </body>
 </html>
