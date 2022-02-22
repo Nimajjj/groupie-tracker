@@ -1,27 +1,27 @@
 package main
 
 import (
-  "fmt"
-  "net/http"
-  "html/template"
-  "encoding/json"
+	"encoding/json"
+	"fmt"
+	"html/template"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"time"
 )
 
 type ViewData struct {
-  Characters  []Character
+	Characters []Character
 }
 
 type Character struct {
-  Name      string
-  Fullname  string
-  Gender    string
+	Name     string
+	Fullname string
+	Gender   string
 }
 
 func loadAPI() []Character {
-  var characters []Character
+	var characters []Character
 
 	url := "https://adventuretimeapi.herokuapp.com/people"
 
@@ -58,23 +58,22 @@ func loadAPI() []Character {
 		log.Fatal(jsonErr)
 	}
 
-  return characters
+	return characters
 }
 
-
 func main() {
-  viewData := ViewData{Characters: loadAPI()}
+	viewData := ViewData{Characters: loadAPI()}
 
-  fmt.Println("\nStarting server -> localhost:80")
+	fmt.Println("\nStarting server -> localhost:80")
 
-  indexTemplate := template.Must(template.ParseFiles("../page/index.html"))
+	indexTemplate := template.Must(template.ParseFiles("../page/index.html"))
 
-  cssFolder := http.FileServer(http.Dir("../css"))
-  http.Handle("/css/", http.StripPrefix("/css/", cssFolder))
+	cssFolder := http.FileServer(http.Dir("../css"))
+	http.Handle("/css/", http.StripPrefix("/css/", cssFolder))
 
-  http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-    indexTemplate.Execute(w, viewData)
-  })
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		indexTemplate.Execute(w, viewData)
+	})
 
-  http.ListenAndServe(":80", nil)
+	http.ListenAndServe(":80", nil)
 }
