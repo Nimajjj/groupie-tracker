@@ -11,19 +11,19 @@ import (
 )
 
 type ViewData struct {
-  Characters  []Character
+	Result []struct {
+		Nom      string `json:"Nom"`
+		Prenom   string `json:"Prenom"`
+		Email    string `json:"Email"`
+		Github   string `json:"Github,omitempty"`
+		Linkedin string `json:"Linkedin,omitempty"`
+	} `json:"result"`
 }
 
-type Character struct {
-  Name      string
-  Fullname  string
-  Gender    string
-}
+func loadAPI() ViewData {
+  vd := ViewData{}
 
-func loadAPI() []Character {
-  var characters []Character
-
-	url := "https://adventuretimeapi.herokuapp.com/people"
+	url := "https://raw.githubusercontent.com/Nimajjj/groupie-tracker/main/API/etudiant.json"
 
 	httpClient := http.Client{
 		Timeout: time.Second * 2, // define timeout
@@ -53,17 +53,17 @@ func loadAPI() []Character {
 		log.Fatal(readErr)
 	}
 
-	jsonErr := json.Unmarshal(body, &characters)
+	jsonErr := json.Unmarshal(body, &vd)
 	if jsonErr != nil {
 		log.Fatal(jsonErr)
 	}
 
-  return characters
+  return vd
 }
 
 
 func main() {
-  viewData := ViewData{Characters: loadAPI()}
+  viewData := loadAPI()
 
   fmt.Println("\nStarting server -> localhost:80")
 
