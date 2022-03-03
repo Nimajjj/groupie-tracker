@@ -72,6 +72,9 @@ func main() {
 	cssFolder := http.FileServer(http.Dir("../css"))
 	http.Handle("/css/", http.StripPrefix("/css/", cssFolder))
 
+	jsFolder := http.FileServer(http.Dir("../js"))
+	http.Handle("/js/", http.StripPrefix("/js/", jsFolder))
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		indexTemplate.Execute(w, viewData)
 	})
