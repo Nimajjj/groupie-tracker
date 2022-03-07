@@ -15,7 +15,7 @@ type ViewData struct {
 		Nom      string `json:"Nom"`
 		Prenom   string `json:"Prenom"`
 		Email    string `json:"Email"`
-    Photo    string `json:"Photo"`
+		Photo    string `json:"Photo"`
 		Github   string `json:"Github,omitempty"`
 		Linkedin string `json:"Linkedin,omitempty"`
 	} `json:"result"`
