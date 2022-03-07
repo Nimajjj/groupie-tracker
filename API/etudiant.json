@@ -1,5 +1,5 @@
 {
-	"result": [
+	"Etudiants": [
 		{
 			"Nom": "ABDELLAH",
 			"Prenom": "Mounir",
@@ -249,5 +249,49 @@
 			"Linkedin": "https://www.linkedin.com/in/nolan-zelphati-a3b565220/?originalSubdomain=fr",
 			"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/nolan.png?raw=true"
 		}
-	] 
+	],
+	"Intervenants": [
+				{
+					"Nom": "DOMINGUEZ",
+					"Prenom": "Lucas",
+					"Email": "lucas.dominguez84@ynov.com",
+					"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/lucas.png"
+				},
+				{
+					"Nom": "PHILIPIERT",
+					"Prenom": "Alan",
+					"Email": "alan.philipiert13@ynov.com",
+					"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/alan.png"
+				},
+				{
+					"Nom": "PACE",
+					"Prenom": "Fabio",
+					"Email": "fabio.pace83@ynov.com",
+					"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/pace.png"
+				},
+				{
+					"Nom": "EMMANUEL",
+					"Prenom": "Gabriel",
+					"Email": "gabriel.emmanuel13@ynov.com",
+					"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/gabriel.png"
+				},
+				{
+					"Nom": "GAULMIN ",
+					"Prenom": "Julien",
+					"Email": "julien.gaulmin@ynov.com",
+					"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/gaulmin.png"
+				},
+				{
+					"Nom": "PALERMO",
+					"Prenom": "David",
+					"Email": "David.PALERMO@ynov.com",
+					"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/palermo.png"
+				},
+				{
+					"Nom": "NOUET",
+					"Prenom": "Sébastien",
+					"Email": "sebastien.nouet@ynov.com",
+					"Photo": "https://github.com/Mkheir13/Site-Ynov-AtikMederreg/blob/main/img/nouet.png"
+				}
+			]
 }
