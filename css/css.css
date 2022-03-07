@@ -715,15 +715,18 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  align-content: center;
 }
 .boxforcard {
-  width: 300px;
-  padding: 300px;
+  width: 70%;
+  height: 650px;
   border-radius: 2%;
   margin: 20px;
-  display: flex;
   background-color: #226CE0;
-  justify-content: flex-start;
+}
+.imgforbox{
+  width: 15%;
+  padding: 20px;
+  display: flex;
   align-items: flex-start;
+  justify-content: row;
 }
