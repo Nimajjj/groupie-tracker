@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"time"
+	"strings"
 )
 
 type ViewData struct {
@@ -62,6 +63,7 @@ func loadAPI() ViewData {
 	return vd
 }
 
+
 func main() {
 	viewData := loadAPI()
 
@@ -76,7 +78,18 @@ func main() {
 	http.Handle("/js/", http.StripPrefix("/js/", jsFolder))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		indexTemplate.Execute(w, viewData)
+		search := r.FormValue("searchBar")
+		if search != "" {
+			filteredViewData := ViewData{}
+			for _, student := range viewData.Result {
+				if (strings.Contains(strings.ToLower(student.Nom), strings.ToLower(search)) || strings.Contains(strings.ToLower(student.Prenom), strings.ToLower(search))) {
+					filteredViewData.Result = append(filteredViewData.Result, student)
+				}
+			}
+			indexTemplate.Execute(w, filteredViewData)
+		} else {
+			indexTemplate.Execute(w, viewData)
+		}
 	})
 
 	http.ListenAndServe(":80", nil)

@@ -8,8 +8,13 @@
     <title>Groupie-Tracker</title>
   </head>
   <body>
-    <h1>Groupie-Tracker</h1>
+    <h1 id="titre">Groupie-Tracker</h1>
     <h2>Kheir-Eddine MEDERREG - Benjamin BORELLO</h2>
+
+    <form action="index.html" method="post">
+      <input type="text" name="searchBar"/>
+      <input type="submit" name="submitSearch"/>
+    </form>
 
     <ul>
       {{range .Result}}
